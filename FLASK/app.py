@@ -29,6 +29,9 @@ def get_weather():
     
     # getting data needed to make the request
     data = request.get_json() 
+    # data = {
+    #     'city': input('Enter a name of a city: ')
+    # }
     city = data['city']
     api_key = os.getenv('API_KEY')
  
@@ -84,7 +87,6 @@ def get_data():
     
     except (Exception,psycopg2.Error) as e:
         return jsonify({'Error': str(e)}),500
-
 
 if __name__ == '__main__':
     app.run(debug=True)
