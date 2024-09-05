@@ -20,7 +20,6 @@ def create_app():
     # binding the SQLAlchemy db to the flask app
     db.init_app(app)
 
-
     # importing routes  
     from routes import all_routes
     all_routes(app,db)
